@@ -1,0 +1,209 @@
+:root {
+  --bg: #0b1020;
+  --card: #121a33;
+  --muted: #8fa3c8;
+  --text: #e7efff;
+  --line: #223055;
+  --primary: #4da3ff;
+  --danger: #ff5c7a;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 20% 0%, #18234a 0%, var(--bg) 60%);
+  color: var(--text);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 16px 40px;
+}
+
+.header {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+h1 { margin: 0 0 6px; font-size: 28px; }
+.subtitle { margin: 0; color: var(--muted); }
+
+.badge {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 12px;
+  border-radius: 12px;
+  min-width: 220px;
+  box-shadow: var(--shadow);
+}
+.badge-title { font-size: 12px; color: var(--muted); }
+.badge-value { font-weight: 600; margin-top: 4px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 900px) {
+  .grid { grid-template-columns: 420px 1fr; align-items: start; }
+}
+
+.card {
+  background: rgba(18,26,51,0.82);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.card h2 { margin: 0 0 12px; font-size: 18px; }
+
+.form .row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+@media (min-width: 520px) {
+  .form .row { grid-template-columns: 1fr 1fr; }
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+
+.field input, .field select {
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+  outline: none;
+}
+
+.field input:focus, .field select:focus {
+  border-color: rgba(77,163,255,0.8);
+  box-shadow: 0 0 0 3px rgba(77,163,255,0.15);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.btn {
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover { background: rgba(255,255,255,0.10); }
+
+.btn.primary {
+  background: rgba(77,163,255,0.20);
+  border-color: rgba(77,163,255,0.55);
+}
+
+.btn.danger {
+  background: rgba(255,92,122,0.18);
+  border-color: rgba(255,92,122,0.55);
+}
+
+.hint {
+  color: var(--muted);
+  margin: 12px 0 0;
+  font-size: 12px;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.table-wrap {
+  overflow: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+.table thead th {
+  text-align: left;
+  font-size: 12px;
+  color: var(--muted);
+  background: rgba(0,0,0,0.25);
+  padding: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  position: sticky;
+  top: 0;
+}
+
+.table td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  vertical-align: top;
+}
+
+.pill {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+.pill.ok { background: rgba(58, 212, 146, 0.14); }
+.pill.late { background: rgba(255, 203, 77, 0.14); }
+.pill.no { background: rgba(255, 92, 122, 0.14); }
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.icon-btn:hover { background: rgba(255,255,255,0.08); }
+
+.footer-note {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.footer {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
