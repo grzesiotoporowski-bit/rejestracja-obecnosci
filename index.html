@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Rejestracja obecności</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div>
+        <h1>Rejestracja obecności</h1>
+        <p class="subtitle">
+          Prosta aplikacja webowa (HTML/CSS/JS) – zapis w LocalStorage + eksport CSV
+        </p>
+      </div>
+      <div class="badge">
+        <div class="badge-title">Autor</div>
+        <div class="badge-value">Wpisz tu swoje imię i nazwisko</div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>Dodaj wpis</h2>
+        <form id="attendanceForm" class="form">
+          <div class="row">
+            <div class="field">
+              <label for="firstName">Imię</label>
+              <input id="firstName" name="firstName" type="text" placeholder="np. Jan" required />
+            </div>
+            <div class="field">
+              <label for="lastName">Nazwisko</label>
+              <input id="lastName" name="lastName" type="text" placeholder="np. Kowalski" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="group">Grupa</label>
+              <input id="group" name="group" type="text" placeholder="np. INF-1" required />
+            </div>
+            <div class="field">
+              <label for="topic">Temat zajęć</label>
+              <input id="topic" name="topic" type="text" placeholder="np. HTML – formularze" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="status">Status</label>
+              <select id="status" name="status" required>
+                <option value="Obecny">Obecny</option>
+                <option value="Spóźniony">Spóźniony</option>
+                <option value="Nieobecny">Nieobecny</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="note">Komentarz (opcjonalnie)</label>
+              <input id="note" name="note" type="text" placeholder="np. autobus / zwolnienie" />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn primary">Zapisz wpis</button>
+            <button type="button" id="clearFormBtn" class="btn">Wyczyść formularz</button>
+          </div>
+
+          <p class="hint">
+            Wpisy zapisują się w przeglądarce (LocalStorage), więc po odświeżeniu strony nie znikną.
+          </p>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Lista obecności</h2>
+          <div class="card-actions">
+            <button id="downloadCsvBtn" class="btn">Pobierz CSV</button>
+            <button id="clearAllBtn" class="btn danger">Wyczyść wszystko</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table" id="attendanceTable">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Grupa</th>
+                <th>Temat</th>
+                <th>Status</th>
+                <th>Komentarz</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="attendanceTbody">
+              <!-- JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="footer-note" id="stats"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 – Projekt zaliczeniowy: rejestracja obecności</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
